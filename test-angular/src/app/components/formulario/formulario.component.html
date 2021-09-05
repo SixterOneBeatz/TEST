@@ -1,0 +1,27 @@
+<form [formGroup]="formPersona" (submit)="AddEdit(this.formPersona.getRawValue())">
+  <input type="hidden" formControlName="id" />
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="nombre" />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Apellido Paterno</mat-label>
+    <input matInput formControlName="aPaterno" />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Apellido Materno</mat-label>
+    <input matInput formControlName="aMaterno" />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Edad</mat-label>
+    <input matInput formControlName="edad" />
+  </mat-form-field>
+  <button
+    mat-raised-button
+    type="submit"
+    color="primary"
+    [disabled]="!this.formPersona.valid"
+  >
+    Guardar
+  </button>
+</form>
